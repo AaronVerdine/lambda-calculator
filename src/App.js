@@ -19,15 +19,20 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
  
-  const [currentNum, setCurrentNum] = useState('0');
+  const [currentNum, setCurrentNum] = useState(" ");
   // const [operator, setOperator] = useState();
   
-const addNumber = (number) => {
+  const addNumber = (number) => {
     setCurrentNum(currentNum => currentNum + number);
-};
-const addOperator = (operator) => {
+  };
+  const addOperator = (operator) => { 
+  if (operator === "=") {
+    setCurrentNum(currentNum => eval(currentNum)) 
+  } else {
     setCurrentNum(currentNum => currentNum + " " + operator + " ");
-};
+  }
+   
+  };
 
 	return (
 		<div className="container">
