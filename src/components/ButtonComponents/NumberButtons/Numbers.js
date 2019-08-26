@@ -9,14 +9,15 @@ import { numbers } from '../../../data'
 const Numbers = () => {
 
   // STEP 2 - add the imported data to state
-  const [numberState, setNumberState] = useState(numbers)
-  const changeNumber = () => {
-    setNumberState(numberState)
-  }
+  // const [numberState, setNumberState] = useState(numbers)
+  // const changeNumber = () => {
+  //   setNumberState(numberState)
+  // }
+  console.log(numbers)
   return (
-    <div>  { numberState.map((item, index) => {
-      return <NumberButton key={index} number={changeNumber}/>
-    })};
+    <div>  { numbers.map((item) => 
+      <NumberButton key={item} number={item}/>
+    )};
     </div>
   )
 };
