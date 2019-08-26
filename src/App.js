@@ -19,8 +19,15 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
 
  
-  const [currentNum, setCurrentNum] = useState();
-	const [operator, setOperator] = useState();
+  const [currentNum, setCurrentNum] = useState('0');
+  // const [operator, setOperator] = useState();
+  
+const addNumber = (number) => {
+    setCurrentNum(currentNum => currentNum + number);
+};
+const addOperator = (operator) => {
+    setCurrentNum(currentNum => currentNum + " " + operator + " ");
+};
 
 	return (
 		<div className="container">
@@ -30,10 +37,10 @@ function App() {
 				<div className="buttons">
 					<div className="buttons-left">
 						<Specials />
-						<Numbers setNum={number => setCurrentNum(number)} />
+						<Numbers addNumber={addNumber}  />
 					</div>
 					<div className="buttons-right">
-						<Operators setOperator={operator => setOperator(operator)} />
+						<Operators addOperator={addOperator} />
 					</div>
 				</div>
 			</div>
