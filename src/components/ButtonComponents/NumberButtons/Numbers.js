@@ -13,9 +13,30 @@ const Numbers = (props) => {
   console.log('Numbers', props)
  
   return (
-    <div>  { numbers.map(number => <NumberButton key={number} text={number} addNumber={props.addNumber} />
-    )}
-    </div>
+    // <div>  { numbers.map(number => <NumberButton key={number} text={number} addNumber={props.addNumber} />
+    // )}
+    // </div>
+    <>
+			<div>
+				{numbers.slice(0, 3).map(number => (
+					<NumberButton  key={number} text={number } addNumber={props.addNumber} />
+				))}
+			</div>
+			<div>
+				{numbers.slice(3, 6).map(number => (
+					<NumberButton key={number} text={number} addNumber={props.addNumber}  />
+				))}
+			</div>
+			<div>
+				{numbers.slice(6, 9).map(number => (
+					<NumberButton key={number} text={number} addNumber={props.addNumber}  />
+				))}
+			</div>
+			<div>
+				<NumberButton key={numbers[9]} text={numbers[9]} addNumber={props.addNumber} />
+				<NumberButton key={numbers[10]} text={numbers[10]} addNumber={props.addNumber}/>
+			</div>
+		</>
 
   )
 };
