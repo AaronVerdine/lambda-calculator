@@ -23,13 +23,13 @@ function App() {
   // const [operator, setOperator] = useState();
   
   const addNumber = (number) => {
-    setCurrentNum(currentNum => currentNum + number);
+    setCurrentNum(currentNum + number);
   };
   const addOperator = (operator) => { 
   if (operator === "=") {
-    setCurrentNum(currentNum => eval(currentNum)) 
+    setCurrentNum(eval(currentNum)) 
   } else {
-    setCurrentNum(currentNum => currentNum + " " + operator + " ");
+    setCurrentNum(currentNum + " " + operator + " ");
   }
    
   };
