@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header.js";
-import Calculator from "./components/Calculator/Calculator";
+import Calculator from "./components/Calculator/calculator";
 function App2() {
   return (
     <div className="wrapper">
